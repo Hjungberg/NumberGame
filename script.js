@@ -9,6 +9,7 @@ document.getElementById("btnGuess").addEventListener("click", (e) => {
 
   guessText.textContent = guessNr;
 
+
   if (guessNr == randomNumber) {
     resultText = "IS CORRECT";
     let x = document.getElementById("btnrestart");
@@ -25,13 +26,14 @@ document.getElementById("btnGuess").addEventListener("click", (e) => {
   if (guessNr < 1 || guessNr > 100) {
     resultText = "Guess between 1-100";
   }
+  else{
+    const guessResult = document.querySelector(".guess-result");
+    guessResult.textContent = resultText;
+    addGuess(guessNr, resultText);
+    document.querySelector(".input-guess").value = "";
+    document.getElementById("input-guess").focus();
+  }
 
-  const guessResult = document.querySelector(".guess-result");
-  guessResult.textContent = resultText;
-
-  addGuess(guessNr, resultText);
-  document.querySelector(".input-guess").value = "";
-  document.getElementById("input-guess").focus();
 });
 
 document.getElementById("btnrestart").addEventListener("click", (e) => {
