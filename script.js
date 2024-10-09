@@ -13,6 +13,8 @@ document.getElementById("btnGuess").addEventListener("click", (e) => {
     resultText = "IS CORRECT";
     let x = document.getElementById("btnrestart");
     x.style.display = "block";
+    x = document.getElementById("btnGuess");
+    x.style.display = "none";
   }
   if (guessNr < randomNumber) {
     resultText = "is to low";

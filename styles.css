@@ -21,7 +21,7 @@ body {
 .container {
   display: flex;
   margin: 1rem auto;
-  background-color: aquamarine;
+  background-color: rgba(146, 241, 241, 0.559);
   width: 500px;
   border: 1px solid black;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.199);
@@ -68,6 +68,7 @@ body {
   margin-top: 1rem;
   margin-bottom: 1rem;
   font-size: .7em;
+  text-align: left;
   li {
     text-align: left;
     list-style-type: none;
