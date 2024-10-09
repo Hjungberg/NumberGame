@@ -23,16 +23,17 @@ document.getElementById("btnGuess").addEventListener("click", (e) => {
   if (guessNr > randomNumber) {
     resultText = "is to high";
   }
+  
+  const guessResult = document.querySelector(".guess-result");
   if (guessNr < 1 || guessNr > 100) {
     resultText = "Guess between 1-100";
   }
   else{
-    const guessResult = document.querySelector(".guess-result");
-    guessResult.textContent = resultText;
     addGuess(guessNr, resultText);
-    document.querySelector(".input-guess").value = "";
-    document.getElementById("input-guess").focus();
   }
+  guessResult.textContent = resultText;
+  document.querySelector(".input-guess").value = "";
+  document.getElementById("input-guess").focus();
 
 });
 
