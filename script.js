@@ -16,10 +16,10 @@ document.getElementById("btnGuess").addEventListener("click", (e) => {
 // Also showing and hiding restart/guess buttons
   if (guessNr == randomNumber) {
     resultText = "IS CORRECT";
-    let x = document.getElementById("btnrestart");
-    x.style.display = "block";
-    x = document.getElementById("btnGuess");
-    x.style.display = "none";
+    let btnHide = document.getElementById("btnrestart"); //Show reset button
+    btnHide.style.display = "block";
+    btnHide = document.getElementById("btnGuess"); // Hide guess button
+    btnHide.style.display = "none";
   }
   if (guessNr < randomNumber) {
     resultText = "is to low";
@@ -31,10 +31,10 @@ document.getElementById("btnGuess").addEventListener("click", (e) => {
   // Checking if the guess is between 1-100. If not dont add to guesslist
   const guessResult = document.querySelector(".guess-result");
   if (guessNr < 1 || guessNr > 100) {
-    resultText = "Guess between 1-100";
+    resultText = "Guess between 1-100"; //Guess outside range
   }
   else{
-    addGuess(guessNr, resultText);
+    addGuess(guessNr, resultText); // Add guess to list
   }
   guessResult.textContent = resultText;
   // Removing last guess from inputbox and setting focus on it
@@ -43,13 +43,13 @@ document.getElementById("btnGuess").addEventListener("click", (e) => {
 
 });
 
-// Reloading page to reset everything
+// Checking if we clieck the reset button and calling restartPage
 document.getElementById("btnrestart").addEventListener("click", (e) => {
   console.log("restart");
   restartPage();
 });
 
-// Checking if we pressed "Enter" in the input box and generating a click if we did.
+// Checking if we pressed "Enter" in the input box and generating a click on "guess" if we did.
 document
   .getElementById("input-guess")
   .addEventListener("keypress", function (e) {
@@ -70,7 +70,7 @@ function addGuess(nr, txt) {
   guessList.appendChild(guess);
 }
 
-// For resetting the page
+// For resetting the page (the lazy way)
 function restartPage() {
   location.reload();
 }
