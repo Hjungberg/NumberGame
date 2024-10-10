@@ -77,7 +77,7 @@ body {
   border-radius: .5em;
   font-weight: 600;
   color: white;
-  background-color: blueviolet;
+  background-color: rgba(137, 43, 226, 0.764);
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.199);
 }
 /* Removing arrows from numbers input field */
