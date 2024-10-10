@@ -13,7 +13,7 @@ document.getElementById("btnGuess").addEventListener("click", (e) => {
   guessText.textContent = guessNr;
 
 // Checking guess and reporting result
-// Also showing and hiding restart/guess buttons
+// Also showing and hiding restart/guess buttons if you guess correct
   if (guessNr == randomNumber) {
     resultText = "IS CORRECT";
     let btnHide = document.getElementById("btnrestart"); //Show reset button
@@ -58,7 +58,7 @@ document
     }
   });
 
-// Adding your guess to the guess list with guess number and result
+// Adding your guess to the guesslist with guess number and result
 function addGuess(nr, txt) {
   numberGuesses++;
   const guess = document.createElement("li");
