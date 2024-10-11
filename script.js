@@ -15,7 +15,7 @@ document.getElementById("btnGuess").addEventListener("click", (e) => {
 // Checking guess and reporting result
 // Also showing and hiding restart/guess buttons if you guess correct
   if (guessNr == randomNumber) {
-    resultText = "IS CORRECT";
+    resultText = "YOU GUESSED CORRECT!";
     let elementHide = document.getElementById("btnrestart"); //Show reset button
     elementHide.style.display = "block";
     elementHide = document.getElementById("btnGuess"); // Hide guess button
