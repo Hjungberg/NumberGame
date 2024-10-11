@@ -16,10 +16,13 @@ document.getElementById("btnGuess").addEventListener("click", (e) => {
 // Also showing and hiding restart/guess buttons if you guess correct
   if (guessNr == randomNumber) {
     resultText = "IS CORRECT";
-    let btnHide = document.getElementById("btnrestart"); //Show reset button
-    btnHide.style.display = "block";
-    btnHide = document.getElementById("btnGuess"); // Hide guess button
-    btnHide.style.display = "none";
+    let elementHide = document.getElementById("btnrestart"); //Show reset button
+    elementHide.style.display = "block";
+    elementHide = document.getElementById("btnGuess"); // Hide guess button
+    elementHide.style.display = "none";
+    elementHide = document.getElementById("input-guess"); //Hide input field
+    elementHide.style.display = "none";
+    elementHide.style.visibility = "hidden";
   }
   if (guessNr < randomNumber) {
     resultText = "is to low";
