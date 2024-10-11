@@ -46,7 +46,7 @@ document.getElementById("btnGuess").addEventListener("click", (e) => {
 
 });
 
-// Checking if we clieck the reset button and calling restartPage
+// Checking if we click the reset button and calling restartPage
 document.getElementById("btnrestart").addEventListener("click", (e) => {
   console.log("restart");
   restartPage();
