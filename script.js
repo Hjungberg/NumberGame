@@ -1,5 +1,4 @@
-
-// Getting a random number 
+// Getting a random number
 let randomNumber = Math.floor(Math.random() * 100) + 1;
 console.log(randomNumber); // For cheating when testing
 const guessList = document.querySelector(".guesslist");
@@ -12,8 +11,8 @@ document.getElementById("btnGuess").addEventListener("click", (e) => {
 
   guessText.textContent = guessNr;
 
-// Checking guess and reporting result
-// Also showing and hiding restart/guess buttons if you guess correct
+  // Checking guess and reporting result
+  // Also showing and hiding restart/guess buttons if you guess correct
   if (guessNr == randomNumber) {
     resultText = "YOU GUESSED CORRECT!";
     let elementHide = document.getElementById("btnrestart"); //Show reset button
@@ -35,15 +34,13 @@ document.getElementById("btnGuess").addEventListener("click", (e) => {
   const guessResult = document.querySelector(".guess-result");
   if (guessNr < 1 || guessNr > 100) {
     resultText = "Guess between 1-100"; //Guess outside range
-  }
-  else{
+  } else {
     addGuess(guessNr, resultText); // Add guess to list
   }
   guessResult.textContent = resultText;
   // Removing last guess from inputbox and setting focus on it
   document.querySelector(".input-guess").value = "";
   document.getElementById("input-guess").focus();
-
 });
 
 // Checking if we click the reset button and calling restartPage
@@ -75,5 +72,27 @@ function addGuess(nr, txt) {
 
 // For resetting the page (the lazy way)
 function restartPage() {
-  location.reload();
+  // Removing guesslist
+  let list = document.getElementById("guesslist");
+  while (list.firstChild) {
+    list.removeChild(list.firstChild);
+  }
+
+  randomNumber = Math.floor(Math.random() * 100) + 1; // new random number
+  console.log(randomNumber); // For cheating
+  let elementHide = document.getElementById("btnrestart"); //Hide reset button
+  elementHide.style.display = "none";
+  elementHide = document.getElementById("btnGuess"); // Show guess button
+  elementHide.style.display = "flex";
+  elementHide = document.getElementById("input-guess"); // Show input field
+  elementHide.style.display = "flex";
+  elementHide.style.visibility = "visible";
+  numberGuesses = 0;
+
+  // resetting text fields 
+  document.querySelector(".input-guess").textContent = "0";
+  document.getElementById("input-guess").focus();
+  document.querySelector(".guess-result").textContent = "Guess Again ";
+  document.querySelector(".guess-text").textContent = "0";
+  
 }
