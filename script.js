@@ -89,10 +89,9 @@ function restartPage() {
   elementHide.style.visibility = "visible";
   numberGuesses = 0;
 
-  // resetting text fields 
+  // resetting text fields
   document.querySelector(".input-guess").textContent = "0";
   document.getElementById("input-guess").focus();
   document.querySelector(".guess-result").textContent = "Guess Again ";
   document.querySelector(".guess-text").textContent = "0";
-  
 }
