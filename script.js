@@ -70,7 +70,7 @@ function addGuess(nr, txt) {
   guessList.appendChild(guess);
 }
 
-// For resetting the page (the lazy way)
+// For resetting the page 
 function restartPage() {
   // Removing guesslist
   let list = document.getElementById("guesslist");
